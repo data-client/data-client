@@ -1,5 +1,18 @@
 # @data-client/react
 
+## 0.14.19
+
+### Patch Changes
+
+- [#3343](https://github.com/reactive/data-client/pull/3343) [`1df829e`](https://github.com/reactive/data-client/commit/1df829e0a005f5973d59669aaf0a226250346a40) Thanks [@ntucker](https://github.com/ntucker)! - Add gcPolicy option to DataProvider and prepareStore
+
+- [#3343](https://github.com/reactive/data-client/pull/3343) [`1df829e`](https://github.com/reactive/data-client/commit/1df829e0a005f5973d59669aaf0a226250346a40) Thanks [@ntucker](https://github.com/ntucker)! - Add GCPolicy
+
+- [`12bb010`](https://github.com/reactive/data-client/commit/12bb01084fa21f4c9e83d8daaa9b4c64e205546d) Thanks [@ntucker](https://github.com/ntucker)! - Update async boundary link in BackupLoading component
+
+- Updated dependencies [[`1df829e`](https://github.com/reactive/data-client/commit/1df829e0a005f5973d59669aaf0a226250346a40), [`1df829e`](https://github.com/reactive/data-client/commit/1df829e0a005f5973d59669aaf0a226250346a40)]:
+  - @data-client/core@0.14.19
+
 ## 0.14.18
 
 ### Patch Changes

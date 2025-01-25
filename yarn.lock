@@ -3067,7 +3067,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@data-client/core@npm:^0.14.18, @data-client/core@workspace:*, @data-client/core@workspace:^, @data-client/core@workspace:packages/core":
+"@data-client/core@npm:^0.14.19, @data-client/core@workspace:*, @data-client/core@workspace:^, @data-client/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@data-client/core@workspace:packages/core"
   dependencies:
@@ -3082,7 +3082,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@data-client/endpoint@npm:^0.14.17, @data-client/endpoint@workspace:*, @data-client/endpoint@workspace:^, @data-client/endpoint@workspace:packages/endpoint":
+"@data-client/endpoint@npm:^0.14.17, @data-client/endpoint@npm:^0.14.19, @data-client/endpoint@workspace:*, @data-client/endpoint@workspace:^, @data-client/endpoint@workspace:packages/endpoint":
   version: 0.0.0-use.local
   resolution: "@data-client/endpoint@workspace:packages/endpoint"
   dependencies:
@@ -3119,7 +3119,7 @@ __metadata:
   dependencies:
     "@anansi/browserslist-config": "npm:^1.4.2"
     "@babel/runtime": "npm:^7.17.0"
-    "@data-client/endpoint": "npm:^0.14.17"
+    "@data-client/endpoint": "npm:^0.14.19"
     "@data-client/react": "workspace:*"
     "@testing-library/react": "npm:^16.1.0"
     "@types/jest": "npm:^29.5.14"
@@ -3158,7 +3158,7 @@ __metadata:
   dependencies:
     "@anansi/browserslist-config": "npm:^1.4.2"
     "@babel/runtime": "npm:^7.17.0"
-    "@data-client/core": "npm:^0.14.18"
+    "@data-client/core": "npm:^0.14.19"
     "@data-client/rest": "workspace:*"
     "@data-client/test": "workspace:*"
     "@data-client/use-enhanced-reducer": "npm:^0.1.11"
@@ -3202,7 +3202,7 @@ __metadata:
   dependencies:
     "@anansi/browserslist-config": "npm:^1.4.2"
     "@babel/runtime": "npm:^7.17.0"
-    "@data-client/endpoint": "npm:^0.14.17"
+    "@data-client/endpoint": "npm:^0.14.19"
     "@data-client/react": "workspace:*"
     "@data-client/test": "workspace:*"
     "@types/jest": "npm:^29.5.14"
