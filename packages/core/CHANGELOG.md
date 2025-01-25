@@ -1,5 +1,13 @@
 # @data-client/core
 
+## 0.14.19
+
+### Patch Changes
+
+- [#3343](https://github.com/reactive/data-client/pull/3343) [`1df829e`](https://github.com/reactive/data-client/commit/1df829e0a005f5973d59669aaf0a226250346a40) Thanks [@ntucker](https://github.com/ntucker)! - Add initManager()
+
+- [#3343](https://github.com/reactive/data-client/pull/3343) [`1df829e`](https://github.com/reactive/data-client/commit/1df829e0a005f5973d59669aaf0a226250346a40) Thanks [@ntucker](https://github.com/ntucker)! - Add GCPolicy
+
 ## 0.14.18
 
 ### Patch Changes
