@@ -1,4 +1,15 @@
-import { babel, commonjs, filesize, dts, resolve, terser } from 'rollup-plugins';
+import {
+  babel,
+  commonjs,
+  filesize,
+  dts,
+  resolve,
+  terser,
+} from 'rollup-plugins';
+
+import pkg from './package.json' with { type: 'json' };
+
+const dependencies = Object.keys(pkg.dependencies);
 
 const name = 'normalizr';
 
@@ -12,6 +23,10 @@ function snakeCase(id) {
   return id.replace(/(-|\/)/g, '_').replace(/@/g, '');
 }
 
+function isExternal(id) {
+  return dependencies.some(dep => dep === id || id.startsWith(dep));
+}
+
 const configs = [];
 
 if (process.env.BROWSERSLIST_ENV !== 'node12') {
@@ -19,11 +34,12 @@ if (process.env.BROWSERSLIST_ENV !== 'node12') {
     configs.push({
       input: 'lib/index.js',
       output: [{ file: `${destBase}.es${destExtension}`, format: 'es' }],
+      external: id => id === '..' || isExternal(id),
       plugins: [
         babel({
           exclude: ['node_modules/**', '/**__tests__/**'],
           extensions,
-          runtimeHelpers: true,
+          babelHelpers: 'runtime',
           rootMode: 'upward',
         }),
         resolve({ extensions }),
@@ -52,12 +68,14 @@ if (process.env.BROWSERSLIST_ENV !== 'node12') {
           name: snakeCase(name),
         },
       ],
+      external: id => id === '..' || isExternal(id),
       plugins: [
         babel({
           exclude: ['node_modules/**', '/**__tests__/**'],
           extensions,
-          runtimeHelpers: true,
+          babelHelpers: 'runtime',
           rootMode: 'upward',
+          caller: { polyfillMethod: false },
         }),
         resolve({ extensions }),
         commonjs({ extensions }),
@@ -76,11 +94,12 @@ if (process.env.BROWSERSLIST_ENV !== 'node12') {
   configs.push({
     input: 'lib/index.js',
     output: [{ file: `${destBase}${destExtension}`, format: 'cjs' }],
+    external: id => id === '..' || isExternal(id),
     plugins: [
       babel({
         exclude: ['node_modules/**', '/**__tests__/**'],
         extensions,
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
         rootMode: 'upward',
       }),
       resolve({ extensions }),
