@@ -1,10 +1,19 @@
-import { babel, banner, commonjs, filesize, json, resolve, replace, terser } from 'rollup-plugins';
+import {
+  babel,
+  banner,
+  commonjs,
+  filesize,
+  json,
+  resolve,
+  replace,
+  terser,
+} from 'rollup-plugins';
 
 import pkg from './package.json' with { type: 'json' };
 
-const dependencies = Object.keys(pkg.peerDependencies).filter(
-  dep => !['@babel/runtime'].includes(dep),
-);
+const dependencies = Object.keys(pkg.dependencies)
+  .concat(Object.keys(pkg.peerDependencies))
+  .filter(dep => ![].includes(dep));
 
 const extensions = ['.js', '.ts', '.tsx', '.mjs', '.json', '.node'];
 process.env.NODE_ENV = 'production';
@@ -40,7 +49,8 @@ export default [
         exclude: ['node_modules/**', '**/__tests__/**'],
         rootMode: 'upward',
         extensions,
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
+        caller: { polyfillMethod: false },
       }),
       replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
       resolve({ extensions }),
@@ -60,7 +70,7 @@ export default [
         exclude: ['node_modules/**', '**/__tests__/**', '**/*.d.ts'],
         rootMode: 'upward',
         extensions,
-        runtimeHelpers: true,
+        babelHelpers: 'runtime',
       }),
       resolve({ extensions }),
       commonjs({ extensions }),
